@@ -1,0 +1,95 @@
+<div class="container">
+	<div class="row" style=" display: flex; justify-content: space-evenly;">
+		<div >
+			<h2>MY543</h2>
+		</div>
+		<div >
+			<h2>{{this.stateDetail ? this.stateDetail.statename : ''}}| {{this.selectedConstituencyData ? this.selectedConstituencyData.constituencyname : ''}}</h2>
+		</div>
+		<div   layout="column" layout-align="space-between start"  >
+		
+			<div style="padding-bottom:10px; display:flex">
+			<select style="    border: solid;
+    border-color: white;
+    background-color: #222221;
+    color: white; overflow-y:scroll; height:30px; width:200px " size="1"
+     (change) = "selectedState($event.target.value)"
+     class="form-control">
+    			<option>Change State</option>
+				<option *ngFor="let objState of stateData" [value]="objState.rowid" >{{objState.statename}}</option>				
+			</select>
+		</div>
+		<div>
+			<select style="    border: solid;
+    border-color: white;
+    background-color: #222221;
+    color: white; overflow-y:scroll; height:30px; width:200px" size="1"
+     (change) = "selectedConstituency($event.target.value)" class="form-control">
+				<option>Change Constituency</option>
+				<option *ngFor = "let obj of constituencyField"  [value]="obj.rowid">{{obj.constituencyname}}</option>				
+			</select>
+		</div>
+		</div>
+	</div>
+	<div *ngIf="this.stateDataServ.showData == true">
+	<div class="row">
+		<img src="../../assets/images/scene1.jpg" height="300px" width="850px"/>
+	</div>
+	<div class="row" >
+		<div  height="100px" style="background-color:#F5460E; width:850px; display: inline-flex;" class="row">
+			<div class="col-md-2">
+				<img src="../../assets/images/dummyimage.jpg" style=" border: solid; border-width: 5px; margin-left: 20px; margin-top: 18px;" width="180px"     height="230px" />
+			</div>
+			<div class="col-md-10">
+				<div style="margin-left: 20px; display:flex">
+					<div style="text-align: left;">
+						<p ><b>{{this.candidateData?this.candidateData.candidatename:''}}</b> <br>Age: {{this.candidateData ? this.candidateData.age : ''}} <br>Education: {{this.candidateData ? this.candidateData.education:''}}</p>
+						
+					</div>
+					<mat-divider style="color:white;height:85px;margin-left:-180px; width:400px; border-width: thick; margin-top: 10px;" [vertical]="true" ></mat-divider>
+					<div style="display:flex; padding-left:15px">
+						<h1 style=" font-size: 3em; margin-top: 20px;">{{this.candidateData ? this.candidateData.terms:''}}</h1>
+						<p style=" width: 100px;  text-align: left; padding-left: 10px; padding-top: 11px; margin-top: 18px; font-size: 15px;">Number of Terms</p>
+						<img src="../../assets/images/roundicon.png" style="border:solid; border-width:5px; border-radius: 50%; margin-top: 22px;" height="28px" width="28px"/>
+					</div>
+				</div>
+				<div style="margin-left: 20px;">
+					<div style="display:flex">
+						<div style="display:flex">
+							<h1 style="margin-top:0px">{{this.candidateData.attendance?this.candidateData.attendance.split('-')[0]:''}}%</h1>
+							<mat-divider style="color:white; width:60px; border-width: thick; height:30px; margin-left:-55px; margin-right:5px" [vertical]="true"  ></mat-divider>
+							<h1 style="margin-top:0px">{{this.candidateData.attendance? this.candidateData.attendance.split('-')[1]:''}}%</h1>
+							<p style="text-align: left; margin-top: 0px; margin-left: 10px;">Attendance/ National <br>Average</p>
+						</div>
+						<div style="display:flex; margin-left: 30px;">
+							<h1 style="margin-top:0px">{{this.candidateData.debateparticipated ? this.candidateData.debateparticipated.split('-')[0] : ''}}</h1>
+							<mat-divider style="color:white; width:60px; border-width: thick; height:30px; margin-left:-55px; margin-right:5px" [vertical]="true"  ></mat-divider>
+							<h1 style="margin-top:0px">{{this.candidateData.debateparticipated ? this.candidateData.debateparticipated.split('-')[1] : ''}}</h1>
+							<p style="text-align: left; margin-top: 0px; margin-left: 10px;">Debate Participated/ National <br>Average</p>
+						</div>
+					</div>
+					<mat-divider style="color:white; width:600px; border-width: thick; margin-top: -10px;"  ></mat-divider>
+					<div style="display:flex; margin-top: 18px;">
+						<div style="display:flex">
+							<h1 style="margin-top:0px">{{this.candidateData.privatememberbills ? this.candidateData.privatememberbills.split('-')[0] : ''}}</h1>
+							<mat-divider style="color:white; width:60px; border-width: thick; height:30px; margin-left:-55px; margin-right:5px" [vertical]="true"  ></mat-divider>
+							<h1 style="margin-top:0px">{{this.candidateData.privatememberbills ? this.candidateData.privatememberbills.split('-')[1] : ''}}</h1>
+							<p style="text-align: left; margin-top: 0px; margin-left: 10px;">Private member Bills <br>Introduced/ National Average</p>
+						</div>
+						<div style="display:flex; margin-left: 30px;">
+							<h1 style="margin-top:0px">{{this.candidateData.questionasked ? this.candidateData.questionasked.split('-')[0] : ''}}</h1>
+							<mat-divider style="color:white; width:60px; border-width: thick; height:30px; margin-left:-55px; margin-right:5px" [vertical]="true"  ></mat-divider>
+							<h1 style="margin-top:0px">{{this.candidateData.questionasked ? this.candidateData.questionasked.split('-')[1] : ''}}</h1>
+							<p style="text-align: left; margin-top: 0px; margin-left: 10px;">Question Asked/ National <br>Average</p>
+						</div>
+					</div>
+				</div>
+				<div style="margin-left: 20px; display: flex">
+					<p>Source: PRS Legislative Research. Data for full-term ministers not recorded.</p>
+				</div>
+			</div>
+		</div>
+		
+	</div>
+</div>
+</div>

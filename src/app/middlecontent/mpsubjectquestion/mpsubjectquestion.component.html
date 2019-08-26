@@ -1,0 +1,104 @@
+<div *ngIf="this.stateDataServ.showData == true">
+	<div>
+		<h1 style="font-size: 2.5em;">Subject-wise LS Questions by the MP</h1>
+	</div>
+	<div style="display:flex; height:180px; width:320px; margin-right: 50px; margin-left: 50px;">
+		<!--{{doughnutChartLabels}}-->
+		<canvas baseChart height="180px"
+              [data]="doughnutChartData1"
+              [labels]="doughnutChartLabels1"              
+              [legend]="true"
+           	  [options] = "options"             
+              [chartType]="doughnutChartType" style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+      
+         <canvas baseChart
+              [data]="doughnutChartData2"
+              [labels]="doughnutChartLabels2"    
+              [legend]="true"
+           	  [options] = "options" 
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex;  margin-right: -120px;" height="180px" width="350px" ></canvas>
+        <canvas baseChart
+              [data]="doughnutChartData3"
+              [labels]="doughnutChartLabels3"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+        <canvas baseChart
+              [data]="doughnutChartData4"
+              [labels]="doughnutChartLabels4"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+        <canvas baseChart
+              [data]="doughnutChartData5"
+              [labels]="doughnutChartLabels5"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+          </div>
+              <div style="display:flex; height:180px; width:320px; margin-right: 50px; margin-left: 50px;">
+        <canvas baseChart
+              [data]="doughnutChartData6"
+              [labels]="doughnutChartLabels6"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+        <canvas baseChart
+              [data]="doughnutChartData7"
+              [labels]="doughnutChartLabels7"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+        <canvas baseChart
+             [data]="doughnutChartData8"
+              [labels]="doughnutChartLabels8"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+        <canvas baseChart
+              [data]="doughnutChartData9"
+              [labels]="doughnutChartLabels9"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+        <canvas baseChart
+              [data]="doughnutChartData10"
+              [labels]="doughnutChartLabels10"
+              [title]="Check10"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+          </div>
+          <div style="display:flex; height:180px; width:320px; margin-right: 50px; margin-left: 50px;">
+        <canvas baseChart
+              [data]="doughnutChartData11"
+              [labels]="doughnutChartLabels11"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+        <canvas baseChart
+              [data]="doughnutChartData12"
+              [labels]="doughnutChartLabels12"    
+              [legend]="true"
+           	  [options] = "options"              
+              [chartType]="doughnutChartType"  style="height:180px; width:350px; display:flex; margin-right: -120px;" height="180px" width="350px" ></canvas>
+	</div>
+	<div style="text-align: left;">
+		<h2 style="color:#F5460E" >
+			Explanation of graph
+		</h2>
+		<ul>
+			<li>
+					{{this.candidateQuestionData ? this.candidateQuestionData.explanation.split('\n')[0]:''}}
+			</li>
+			<li>
+					{{this.candidateQuestionData? this.candidateQuestionData.explanation.split('\n')[1]:''}}
+			</li>
+		</ul>
+	</div>
+	<div>
+		<mat-divider style="color:white" ></mat-divider>
+	</div>
+</div>
+
+

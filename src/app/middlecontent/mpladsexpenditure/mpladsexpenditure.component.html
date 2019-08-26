@@ -1,0 +1,32 @@
+<div *ngIf="this.stateDataServ.showData == true">
+	<div>
+		<h1 style="font-size: 2.5em;">MPLADS Expenditure</h1>
+	</div>
+	<div height="300px" width="800px">
+		<canvas baseChart 
+            [datasets]="barChartData"
+            [labels]="barChartLabels"
+            [options]="barChartOptions"
+            
+            [chartType]="barChartType"
+             >
+    	</canvas>
+	</div>
+	<div style="text-align: left;">
+		<h2 style="color:#F5460E" >
+			Explanation of graph
+		</h2>
+		<ul>
+			<li>
+					{{this.expenditureData ? this.expenditureData.explanation.split('\n')[0]:''}}
+			</li>
+			<li>
+					{{this.expenditureData ? this.expenditureData.explanation.split('\n')[1]:''}}
+			</li>
+			
+		</ul>
+	</div>
+	<div>
+		<mat-divider style="color:white" ></mat-divider>
+	</div>
+</div>
